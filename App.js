@@ -7,6 +7,7 @@ import {
   ImageBackground,
   TouchableOpacity,
   Linking,
+  SafeAreaView,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -78,22 +79,19 @@ export default function App() {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.topBar}>
         <Text style={styles.topBarTitle}>THIS JUST IN!</Text>
       </View>
       <MyComponent data={data} />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingStart: 8,
-    paddingEnd: 8,
-    paddingTop: 50,
     paddingBottom: 30,
   },
   item: {
@@ -102,27 +100,28 @@ const styles = StyleSheet.create({
     borderBottomColor: "#ccc",
   },
   itemWithoutImage: {
-    padding: 10, // Maintain consistent padding
+    padding: 10,
   },
   topBar: {
-    backgroundColor: "#BE3144", // Light gray background for the top bar
+    backgroundColor: "red",
     padding: 10,
   },
   topBarTitle: {
     fontSize: 20,
     fontWeight: "bold",
+    textAlign: "center",
     color: "#FFFFFF",
   },
   title: {
     fontWeight: "bold",
     fontSize: 16,
     marginBottom: 4,
-    color: "#FFFFFF",
+    color: "white",
     textDecorationLine: "underline",
   },
   abstract: {
     fontSize: 14,
-    color: "#FFFFFF",
+    color: "white",
   },
   image: {
     width: "100%",
